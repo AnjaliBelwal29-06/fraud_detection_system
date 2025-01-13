@@ -1,4 +1,6 @@
 # Importing necessary libraries
+# pip install pandas scikit-learn
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -6,8 +8,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 
 # Step 1: Load the dataset
-# Example dataset structure: ['TransactionID', 'Amount', 'Age', 'TransactionType', 'Fraud']
-data = pd.read_csv("fraud_dataset.csv")  # Replace with your dataset
+# Example dataset structure: ['transaction_id', 'transaaction_amount','location','merchant','age','gender','fraud_label']
+data = pd.read_csv("fraud_dataset.csv")  # Replace with your dataset(path)
 
 # Display first few rows of the dataset
 print(data.head())
@@ -53,6 +55,6 @@ print(confusion_matrix(y_test, y_pred))
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
-# Accuracy
+# Accuracy....
 accuracy = model.score(X_test_scaled, y_test)
 print(f"\nAccuracy: {accuracy:.2f}")
